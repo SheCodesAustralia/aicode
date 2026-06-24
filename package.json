@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "hugo-cli": "^0.14.0",
+    "prettier": "^3.3.1"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.1"
+  }
+}
