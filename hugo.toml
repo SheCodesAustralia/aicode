@@ -1,0 +1,17 @@
+theme = 'hugo-theme-relearn'
+baseURL = 'https://tutorials.shecodes.com.au'
+languageCode = 'en-au'
+title = 'She Codes One Day Workshop Tutorials (new)'
+ignoreFiles = ["README.md"]
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+  themeVariant = ['relearn-light', 'relearn-dark']
+  # Shows a checkmark for visited pages on the menu
+  showVisitedLinks = true
+
+[markup.goldmark.renderer]
+unsafe = true
