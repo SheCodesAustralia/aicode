@@ -1,0 +1,78 @@
+/* Custom CSS for She Codes workshop - Simple approach */
+
+/* Remove all the complex badge and border styling */
+/* Keep only essential fixes */
+
+/* Border colors for "after" code blocks - comprehensive targeting */
+/* Target the pre element inside highlight divs */
+div.highlight[title*="after"] pre:not(.mermaid),
+div.highlight[title*="After"] pre:not(.mermaid),
+div.highlight[title*="AFTER"] pre:not(.mermaid) {
+    border: 3px solid #2ECC71 !important; /* Green for after */
+    border-radius: 4px !important;
+}
+
+/* Target the inner div structure that Hugo sometimes creates */
+div.highlight[title*="after"] > div,
+div.highlight[title*="After"] > div,
+div.highlight[title*="AFTER"] > div {
+    border: 3px solid #2ECC71 !important;
+    border-radius: 4px !important;
+}
+
+/* Border colors for "before" code blocks */
+div.highlight[title*="before"] pre:not(.mermaid),
+div.highlight[title*="Before"] pre:not(.mermaid),
+div.highlight[title*="BEFORE"] pre:not(.mermaid) {
+    border: 3px solid #E74C3C !important; /* Red for before */
+    border-radius: 4px !important;
+}
+
+div.highlight[title*="before"] > div,
+div.highlight[title*="Before"] > div,
+div.highlight[title*="BEFORE"] > div {
+    border: 3px solid #E74C3C !important;
+    border-radius: 4px !important;
+}
+
+/* High specificity selectors to override theme CSS */
+#R-body div.highlight[title*="after"] pre:not(.mermaid) {
+    border-color: #2ECC71 !important;
+    border-width: 3px !important;
+    border-style: solid !important;
+}
+
+#R-body div.highlight[title*="before"] pre:not(.mermaid) {
+    border-color: #E74C3C !important;
+    border-width: 3px !important;
+    border-style: solid !important;
+}
+
+/* Override CSS variables used by the theme */
+div.highlight[title*="after"] {
+    --INTERNAL-CODE-BLOCK-BORDER-color: #2ECC71 !important;
+}
+
+div.highlight[title*="before"] {
+    --INTERNAL-CODE-BLOCK-BORDER-color: #E74C3C !important;
+}
+
+/* Enhanced label styling for before/after states */
+div.highlight[title*="before"]:before {
+    background: #E74C3C !important; /* Red background for before labels */
+}
+
+div.highlight[title*="after"]:before {
+    background: #2ECC71 !important; /* Green background for after labels */
+}
+
+/* Fallback targeting with class selectors */
+.highlight.before pre:not(.mermaid),
+.highlight-before pre:not(.mermaid) {
+    border: 3px solid #E74C3C !important;
+}
+
+.highlight.after pre:not(.mermaid),
+.highlight-after pre:not(.mermaid) {
+    border: 3px solid #2ECC71 !important;
+}

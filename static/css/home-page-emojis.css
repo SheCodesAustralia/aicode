@@ -1,0 +1,30 @@
+/* Add emojis to workshop sections only on home page */
+.home-page .children a[href*="/html_and_css/"]:before {
+    content: "🌐 ";
+}
+
+.home-page .children a[href*="/javascript/"]:before {
+    content: "🧁 ";
+}
+
+.home-page .children a[href*="/django/"]:before {
+    content: "🥖 ";
+}
+
+.home-page .children a[href*="/python/"]:before {
+    content: "🐍 ";
+}
+
+/* Add spacing between workshop sections */
+.home-page .children > div {
+    margin-bottom: 2rem !important;
+}
+
+/* Alternative targeting for spacing */
+.home-page .children .children-title {
+    margin-bottom: 1rem !important;
+}
+
+.home-page .children p {
+    margin-bottom: 1rem !important;
+}
