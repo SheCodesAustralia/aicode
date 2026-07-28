@@ -12,6 +12,6 @@ The work created on this will remain private to you, and is saved through browse
 
 This workshop not require any installations of Python or Visual Studio Code.
 
-![She Codes Jupyter Workspace](static/images/jupyter.png)
+![She Codes Jupyter Workspace](images/jupyter.png)
 Your workspace should look like this.
 
