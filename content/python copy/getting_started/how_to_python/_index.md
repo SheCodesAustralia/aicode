@@ -13,7 +13,7 @@ Part of this chapter is based on tutorials by Geek Girls Carrots (https://github
 Let's write some code!
 
 We want to open up a Python console on our workshop. This console is a WebAssembly-powered Python kernel that is backed by Pyodide.
-![Console Location](images/console_loc.png)
+![Console Location](./images/console_loc.png)
 
 
 
