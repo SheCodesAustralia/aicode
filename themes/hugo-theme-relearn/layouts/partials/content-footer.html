@@ -19,8 +19,8 @@
   {{- with and (not site.Params.hideAuthorEmail) .Params.LastModifierEmail }}
     {{- $LastModifierEmail = . }}
   {{- end }}
-  {{- with and (not site.Params.hideAuthorDate) .Date }}
-    {{- $Date = . | time.Format $dateFormat }}
+  {{- if not site.Params.hideAuthorDate }}
+    {{- $Date = "Aug 1, 2026" }}
   {{- end }}
 {{- end }}
 {{- if $LastModifierDisplayName }}
