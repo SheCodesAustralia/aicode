@@ -5,7 +5,7 @@ chapter: false
 ---
 
 Colour is something that can easily change the tone and feel of your work. We can give our game some colour by assigning some to our canvas. There are lots to pick from including...
-![Colour Names](./images/100_Color_names_python.png)
+![Colour Names](../images/100_Color_names_python.png)
 
 
 So we can add to our code the following...
