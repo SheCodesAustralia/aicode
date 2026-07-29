@@ -1,10 +1,4 @@
 ---
-title: "Space Turtle Chomp"
-weight: 2
-chapter: false
----
-
----
 title: "Python Libraries"
 weight: 2
 chapter: false
