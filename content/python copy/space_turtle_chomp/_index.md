@@ -9,11 +9,6 @@ pre: "🥬 🐢 "
 
 ![space turtle chomp](images/Space%20Turtle%20Chomp.png)
 
-Original Game Created by Christian Thompson aka @TokyoEdTech
+This game is a condensed version of the Python game from our One-Day workshop.
 
-Transcribed and adapted by Kieran McCluskey
-with some help from Adrian Smith
-
-Reformatted and re-adapted for She Codes Australia by Ben Fitzhardinge
-
-For more Python tutorials visits [www.christianthompson.com](http://www.christianthompson.com)
+Restructured by Adelia Widyasari

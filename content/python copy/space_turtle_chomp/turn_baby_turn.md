@@ -1,137 +1,33 @@
 ---
-title: "Turn Baby Turn"
+title: "Creating our Canvas"
 weight: 3
 chapter: false
 ---
 
-We will assign keys on the keyboard to control the turtle and help  it move left, right and speed up.
+Before we can even begin to let our turtle roam free, we need to give it a space to swim around. To do this, we will write down the code to create the user interface of our game. This requires the understanding of how variables work, along with how computers interpret code to turn it into something we can see.
 
-But before that we just need to understand a little bit about coding. Most developers do not write their code from top to bottom in one straight go and instead will write a bit of code, test it and then either add more, delete or edit the code. Throughout coding this tutorial you will need to move to different parts of your program to add and edit. Be careful to read the instructions and make sure you are writing in the correct part of your program and not repeating lines you have already written.
-
->**Step 1.**  A good habit to get into with any coding is to regularly save versions of your code as you make changes as this allows you to either re-use code for other programs or roll back to a working version if something goes wrong. 
-
-So click File --> Save As and save the file as `kbgame2`
-
->**Step 2.**  We need to set keyboard bindings that tell the computer that when you
- push a certain key to call a certain function. For this to work we need to set
- the computer to listen for keyboard strokes by typing the following under the
- speed = 1 line:
-
-```python {title="python"}
-speed = 1
-
-# Set keyboard binding
-turtle.listen()
-turtle.onkey(turn_left, 'Left')
-turtle.onkey(turn_right, 'Right')
-turtle.onkey(increase_speed, 'Up')
-while True:
-    player.forward(speed)
+>**Step 1.** Creating game variables
+In order to create the canvas, we need to set its dimensions. Through the canvas library, Python reads the numbers we provide as pixels in order to determine how large our canvas will be.
+```python {title = "python"}
+WIDTH = 260
+HEIGHT = 260
+game_running = False
+game_over = False
 ```
+For now we'll keep the size something reasonable so it doesn't take up the entire space. However you are free to change things up if you wish.
+You can click the "▶︎" on the top the tool bar to run the code. However, you'll notice that nothing has happened yet. Don't worry, we're getting there!
 
-We use the `turtle.onkey` method to set the computer to listen for a certain key and when that key is pressed it will run the assigned function. So when the left arrow key is pressed it will call the function called turn_left.
-
-{{% notice note %}}
-
-This new piece of code sits between setting the speed (line 16) and the start of the while loop (line 24). In Python where the code sits is very important.
-
-{{% /notice %}}
-
->**Step 3.**  The next step is to write the `turn_left`, `turn_right` and  `increase_speed` functions again under the speed = 1 line you may need to press enter a few times to add some spare lines.
-
-```python {title="python"}
-speed = 1
-
-# Define functions
-def turn_left():
-    player.left(30)
-
-def turn_right():
-    player.right(30)
-
-def increase_speed():
-    global speed
-    speed += 1
-
+>**Step 2.** Drawing our canvas
+Now we'll finally start putting those libraries and variables to use.
+```python {title = "python"}
+canvas = Canvas(width = WIDTH, height = HEIGHT)
+canvas.layout.width = "260px"
+canvas.layout.height = "260px"
+score_label = Label(value= "Score: 0")
+help_label = Label(value= "Click game to start, then use ← → to move")
 ```
-
-`player.left` and `player.right` are set to turn your turtle at 30&deg; when the left and right arrow keys are pushed (remember to push and let go).
-
-Global speed is a global function and we have set that every time the up arrow key is pushed the turtle increases its speed by 1.
-
->**Step 5.**  Save the file by selecting File --&gt; Save and run your updated  program by pressing F5 and then click on your turtle screen with the mouse and use the left and right arrow keys to move your turtle and the up arrow to increase its speed.
-
->**Step 6.**  Close the Turtle and Python Shell windows.
-
->**Step 7.**  You might see that the turtle icon jumps a bit when you press the arrow keys, this can be fixed very easily by adding the player speed variable at the end of your #Create player turtle section just after `player.penup()`.
-
-```python {title="python"}
-
-player.penup()
-player.speed(0)
+The code above sets the actual canvas itself. However, in order for it to show, we need to actually display it using another line of code.
+```python {title = "python"}
+display(canvas)
 ```
-
-{{% notice info %}}
-0 is the fastest animation speed.
-{{% /notice %}}
-
->**Step 8.**  Save and Run your module again try moving the turtle icon now and then close the Turtle and Python Shell windows.
-
-{{% notice style="info" title="Challenge!" icon="lightbulb" %}}
-
-Before moving to the next section have a play with your code you could change the angle the turtle moves when a either left or right key is pressed or you could add a slowdown function and keyboard binding using the 'Down' arrow.
-
-{{% /notice %}}
-
-Your code should now look like this:
-
-```python {title="python"}
-#Turtle Graphics Game
-import turtle
-
-#Set up screen
-turtle.setup(650,650)
-wn = turtle.Screen()
-wn.bgcolor("Navy")
-
-
-#Create player turtle
-player = turtle.Turtle()
-player.color("darkorange")
-player.shape("turtle")
-player.penup()
-player.speed(0) 
-
-#Set speed variable
-speed = 1
-
-#Define  functions
-
-def turn_left():
-    player.left(30)
-
-def turn_right():
-    player.right(30)
-
-def increase_speed():
-    global speed
-    speed += 1
-
-#Set keyboard bindings
-turtle.listen()
-turtle.onkey(turn_left, "Left")
-turtle.onkey(turn_right, "Right")
-turtle.onkey(increase_speed, "Up") 
-
-
-
-
-while True:
-    player.forward(speed)
-```
-
-{{% notice style="tip" title="Time to celebrate" %}}
-
-**Congratulations Module 2 Completed**
-
-{{% /notice %}}
+Once you run that, you'll notice how a large empty cell appeared. That's because we haven't set the colour of our canvas yet. So let's add a splash of colour in the next part of the workshop.
