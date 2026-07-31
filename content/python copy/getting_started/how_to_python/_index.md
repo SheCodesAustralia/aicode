@@ -5,7 +5,7 @@ chapter: false
 ---
 
 {{% notice info %}}
-Part of this chapter is based on tutorials by Geek Girls Carrots (https://github.com/ggcarrots/django-carrots).
+Part of this chapter is based on tutorials by [Geek Girls Carrots](https://github.com/ggcarrots/django-carrots).
 {{% /notice %}}
 
 ### Python prompt
@@ -98,7 +98,7 @@ Nice, huh? To see your name in uppercase letters, try typing:
 <!-- {% filename %}command-line{% filename %} -->
 ```python {title="python"}
 >>> "Kate".upper()
-'Kate'
+'KATE'
 ```
 
 You just used the `upper` __method__ on your string! A method (like `upper()`) is a sequence of instructions that Python has to perform on a given object (`"Kate"`) once you call it.

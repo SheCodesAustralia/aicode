@@ -1,8 +1,10 @@
 ---
-title: "Move turtle move!"
+title: "Move Turtle Move!"
 weight: 7
 chapter: false
 ---
+We're finally nearly at the end of the game. All we need to do now is let the turtle move.
+{{% notice style="tip" title="Add this code" %}}
 ```python {title = "python"}
 # Keyboard inputs
 def on_key_down(key, shift_key, ctrl_key, meta_key):
@@ -14,8 +16,25 @@ def on_key_down(key, shift_key, ctrl_key, meta_key):
         turtle_x -= 15
     elif key == "ArrowRight" and turtle_x < WIDTH - turtle_width:
         turtle_x += 15
+
 canvas.on_key_down(on_key_down)
 ```
+
+{{% /notice %}}
+
+- ` turtle_x -= 15` and ` turtle_x += 15` moves the turtle 15 pixels
+- The if statements `if key == "ArrowLeft" and turtle_x > 0` and `elif key == "ArrowRight" and turtle_x < WIDTH - turtle_width` coordinate the turtle, while also keeping it within the game's canvas. So that it doesn't go out of bounds.
+- `key` is used to represent whether the key pressed is the right or left key. While `shift_key`, `ctrl_key` and `meta_key` are used for boolean (True/ False) values. They are needed in this function because `ipcanvas` registers fours values, usually as:
+```python {title = "python"}
+handler("ArrowRight", False, False, False)
+#       key           shift   ctrl  meta
+```
+Hence the key input functions requires all four values to be called.
+
+### Congratulations!
+You finally made it your own Python game! To check your work, refer to the code below!
+![Happy Turtle](../images/happy_turtle.jpg)
+
 {{% notice style="note" title="NOTE" icon="vial" %}}
 This preview is an example of how your code should look like at the end. To check or compare, take a look at the following Python code.
 
