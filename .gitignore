@@ -2,3 +2,6 @@
 resources
 .DS_Store
 public
+
+# Local Netlify folder
+.netlify

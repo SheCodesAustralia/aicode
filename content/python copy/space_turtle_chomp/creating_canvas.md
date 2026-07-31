@@ -7,6 +7,7 @@ chapter: false
 Before we can even begin to let our turtle roam free, we need to give it a space to swim around. To do this, we will write down the code to create the user interface of our game. This requires the understanding of how variables work, along with how computers interpret code to turn it into something we can see.
 
 >**Step 1.** Creating game variables
+
 In order to create the canvas, we need to set its dimensions. Through the canvas library, Python reads the numbers we provide as pixels in order to determine how large our canvas will be.
 ```python {title = "python"}
 WIDTH = 260
@@ -18,6 +19,7 @@ For now we'll keep the size something reasonable so it doesn't take up the entir
 You can click the "▶︎" on the top the tool bar to run the code. However, you'll notice that nothing has happened yet. Don't worry, we're getting there!
 
 >**Step 2.** Drawing our canvas
+
 Now we'll finally start putting those libraries and variables to use.
 ```python {title = "python"}
 canvas = Canvas(width = WIDTH, height = HEIGHT)
