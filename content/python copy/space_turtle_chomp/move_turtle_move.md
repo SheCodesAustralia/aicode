@@ -55,6 +55,7 @@ canvas.layout.width = "260px"
 canvas.layout.height = "260px"
 score_label = Label(value= "Score: 0")
 help_label = Label(value= "Click game to start, then use ← → to move")
+game_ui = VBox([score_label, help_label, canvas])
 
     # Running the game graphics -> Step 1.3
 def draw_start_screen():
@@ -73,10 +74,15 @@ def draw_start_screen():
     canvas.draw_image(turtle_img, turtle_x, turtle_y, turtle_width, turtle_height)
 
 
-
 # Adding your turtle and seaweed -> Step 2.1
 turtle_height, turtle_width = 30, 30
 seaweed_size = 15
+
+    # Loading images
+with open("images/turtle.png", "rb") as f:
+    turtle_img = Image(value = f.read(), format = "png", width = turtle_width, height = turtle_height)
+with open("images/seaweed.png", "rb") as f:
+    seaweed_img = Image(value = f.read(), format = "png", width = seaweed_size)
 
     # Sprite settings - location/ placement
 turtle_x = WIDTH // 2 -  turtle_height // 2
@@ -85,11 +91,6 @@ seaweed_x = random.randint(0, WIDTH - seaweed_size)
 seaweed_y = 0
 seaweed_speed = 5
 
-    # Loading images
-with open("images/turtle.png", "rb") as f:
-    turtle_img = Image(value = f.read(), format = "png", width = turtle_width, height = turtle_height)
-with open("images/seaweed.png", "rb") as f:
-    seaweed_img = Image(value = f.read(), format = "png", width = seaweed_size)
 
 # Game start
 def on_canvas_click(x, y):
@@ -112,6 +113,7 @@ def on_canvas_click(x, y):
     
 canvas.on_mouse_down(on_canvas_click)
 
+
 # Game over
 def draw_game_over():
     canvas.fill_style = "white"
@@ -119,6 +121,7 @@ def draw_game_over():
     canvas.fill_text("GAME OVER", 55, HEIGHT // 2 - 10)
     canvas.font = "12px sans-serif"
     canvas.fill_text("Click to play again", 78, HEIGHT // 2 + 20)
+
 
 # Keyboard inputs
 def on_key_down(key, shift_key, ctrl_key, meta_key):
@@ -161,9 +164,9 @@ async def game_loop():
                 break
 
             await asyncio.sleep(0.05)
+        
 
-# Launching the game
-game_ui = VBox([score_label, help_label, canvas])
+# Launching the game -> Step 1.4
 display(game_ui)
 draw_start_screen()
 ```
